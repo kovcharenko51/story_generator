@@ -18,6 +18,8 @@ def gen_story() -> str:
     words_count = 100
     new_story = [choose_start()]
     for i in range(words_count):
+        while new_story[-1] == words[-1]:
+            new_story[-1] = np.random.choice(words)
         new_story.append(np.random.choice(pair_dict[new_story[-1]]))
     return " ".join(new_story)
 
